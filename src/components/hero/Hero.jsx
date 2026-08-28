@@ -48,7 +48,7 @@ const Hero = () =>{
                  Writer Content Creator Influencer  {/* change */}
             </motion.div>
             <div className="imageContainer">
-                <img src="/Subject.png" alt=""/>
+                <img src="${import.meta.env.BASE_URL}Subject.png" alt=""/> {/*fixing image issue*/}
             </div>
         </div>
     );
