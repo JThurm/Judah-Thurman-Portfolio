@@ -41,19 +41,14 @@ const Hero = () =>{
                     <motion.button variants={textVariants}>See The Latest Work</motion.button>
                     <motion.button variants={textVariants}>Contact Me</motion.button>
                 </motion.div>
-                   <motion.img
-                        variants={textVariants}
-                        animate="scrollButton"
-                        src={`${import.meta.env.BASE_URL}scroll.png`}
-                        alt=""
-                    />
+                    <motion.img variants={textVariants} animate="scrollButton" src="/scroll.png" alt=""/>
                 </motion.div>
             </div>
-            <motion.div className="slidingTextContainer" variants={sliderVariants} initial ="initial" animate="animate">
+            <motion.div className="slidingTextContainer" variants={sliderVariants} initial ="intial" animate="animate">
                  Writer Content Creator Influencer  {/* change */}
             </motion.div>
             <div className="imageContainer">
-                <img src={`${import.meta.env.BASE_URL}Subject.png`} alt=""/> {/*fixing image issue*/}
+                <img src="${import.meta.env.BASE_URL}Subject.png" alt=""/> {/*fixing image issue*/}
             </div>
         </div>
     );
