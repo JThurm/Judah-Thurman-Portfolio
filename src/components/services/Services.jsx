@@ -41,7 +41,7 @@ const Services = () =>{
             </motion.div>
             <motion.div className="titleContainer"variants={variants}>
                 <div className="title">
-                    <img src="/people.webp" alt=""/> {/* TODO: swap for a real headshot */}
+                    <img src={`${import.meta.env.BASE_URL}people.png`} alt=""/> {/* TODO: swap for a real headshot */}
                         <h1>
                             <motion.b whileHover={{color:"orange"}}>Software</motion.b> Engineer
                         </h1>
