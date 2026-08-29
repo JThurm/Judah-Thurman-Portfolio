@@ -19,17 +19,31 @@ const Navbar = () => {
                 </motion.span>
 
                 <div className= "social">
-                    <a href = "#">
-                        <img src={`${import.meta.env.BASE_URL}linkedin.svg`} alt="" />
-                    </a> {/*linkedIn*/}
-                    <a href = "#">
-                        <img src={`${import.meta.env.BASE_URL}instagram.png`} alt="" />
+                    <a
+                        href="https://www.linkedin.com/in/judah-t-80a071240/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={`${import.meta.env.BASE_URL}linkedin.svg`} alt="LinkedIn" />
+                    </a> 
+                    <a 
+                        href = "https://www.instagram.com/j.n.thurm/?hl=en"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={`${import.meta.env.BASE_URL}instagram.png`} alt="Instagram" />
                     </a>
-                    <a href = "#">
-                        <img src={`${import.meta.env.BASE_URL}github.png`} alt="" />
-                        {/* GitHub */}
-                    </a>
-                    <a href = "#">
+                    <a
+                        href="https://github.com/JThurm"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={`${import.meta.env.BASE_URL}github.png`} alt="GitHub" />
+                        
+                    </a> {/*TBD*/}
+                    <a   href="#"
+                        target="_blank"
+                        rel="noopener noreferrer">
                         <img src={`${import.meta.env.BASE_URL}dribbble.png`} alt="" />
                     </a>
                 </div>
