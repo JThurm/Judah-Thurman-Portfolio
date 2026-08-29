@@ -1,3 +1,4 @@
+import Portfolio from '../portfolio/Portfolio';
 import './hero.scss';
 import { motion } from 'framer-motion';
 
@@ -39,6 +40,13 @@ const sliderVariants = {
 };
 
 const Hero = () => {
+
+    const scrollToSection = (sectionId) => {
+        document.getElementById(sectionId).scrollIntoView({
+            behavior: "smooth"
+        });
+    };
+    
     return (
         <div className="hero">
             <div className="wrapper">
@@ -61,17 +69,22 @@ const Hero = () => {
                         variants={textVariants}
                         className="buttons"
                     >
-                        <motion.button variants={textVariants}>
+                        <motion.button 
+                            variants={textVariants}
+                            onClick={() => scrollToSection("Portfolio")}
+                        >
                             See The Latest Work
+
                         </motion.button>
 
-                        <motion.button variants={textVariants}>
+                        <motion.button variants={textVariants} onClick={() => scrollToSection("Contact")}>
                             Contact Me
                         </motion.button>
                     </motion.div>
 
                     <motion.img
                         variants={textVariants}
+                        onClick={() => scrollToSection("Services")}
                         animate="scrollButton"
                         src={`${import.meta.env.BASE_URL}scroll.png`}
                         alt=""

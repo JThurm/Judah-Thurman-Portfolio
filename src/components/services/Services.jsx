@@ -30,7 +30,7 @@ const Services = () =>{
             variants={variants} 
             initial="initial" 
             ref={ref}
-            animate={"animate"}//{isInView&&"animate"}
+            animate={isInView&&"animate"}
         >
             
             <motion.div className="textContainer" variants={variants}>
@@ -50,7 +50,9 @@ const Services = () =>{
                     <h1>
                         <motion.b whileHover={{color:"orange"}}>UT Austin</motion.b> ECE Grad
                     </h1>
-                    <button>Résumé</button> {/* TODO: link to résumé PDF */}
+                    <a href={`${import.meta.env.BASE_URL}Judah_Thurman.pdf`} target="_blank" rel="noopener noreferrer">
+                        <button>Résumé</button>
+                    </a>
                 </div>
             </motion.div>
             <motion.div className="listContainer" variants={variants}>

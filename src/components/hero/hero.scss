@@ -1,17 +1,19 @@
 @import "../../app.scss";
 
-.hero{
+.hero {
     height: calc(100vh - 100px);
     overflow: hidden;
     background: linear-gradient(180deg, #0c0c0c, #111132);
     position: relative;
 
-    .wrapper{
+    .wrapper {
         max-width: 1366px;
         height: 100%;
         margin: auto;
+        position: relative;
+        z-index: 10;
 
-        .textContainer{
+        .textContainer {
             width: 50%;
             height: 100%;
             display: flex;
@@ -19,7 +21,10 @@
             justify-content: center;
             gap: 40px;
 
-            @include mobile{
+            position: relative;
+            z-index: 20;
+
+            @include mobile {
                 height: 50%;
                 width: 100%;
                 gap: 20px;
@@ -27,21 +32,25 @@
                 text-align: center;
             }
 
-            h2{
+            h2 {
                 font-size: 30px;
                 color: rebeccapurple;
                 letter-spacing: 10px;
             }
 
-            h1{
+            h1 {
                 font-size: 88px;
-                 @include mobile{
+
+                @include mobile {
                     font-size: 36px;
-            }
+                }
             }
 
-            .buttons{
-                button{
+            .buttons {
+                position: relative;
+                z-index: 30;
+
+                button {
                     padding: 20px;
                     border: 1px solid white;
                     border-radius: 10px;
@@ -50,27 +59,33 @@
                     margin-right: 20px;
                     cursor: pointer;
                     font-weight: 300;
+
+                    position: relative;
+                    z-index: 31;
                 }
             }
 
-            img{
+            img {
                 width: 50px;
             }
         }
     }
 
-    .imageContainer{
-        height:100%;
+    .imageContainer {
+        height: 100%;
         position: absolute;
-        bottom:0;
+        bottom: 0;
         right: 0;
+        z-index: 30;
 
-         @include mobile{
-                height: 50%;
-                width: 100%;
-                top:unset;
-                bottom:0;
-            }
+        pointer-events: none;
+
+        @include mobile {
+            height: 50%;
+            width: 100%;
+            top: unset;
+            bottom: 0;
+        }
 
         img {
             width: 100%;
@@ -79,7 +94,7 @@
         }
     }
 
-    .slidingTextContainer{
+    .slidingTextContainer {
         position: absolute;
         font-size: 50vh;
         bottom: -120px;
@@ -87,6 +102,7 @@
         color: #ffffff09;
         width: 50%;
         font-weight: bold;
+        pointer-events: none;
+        z-index: 25;
     }
-
 }
