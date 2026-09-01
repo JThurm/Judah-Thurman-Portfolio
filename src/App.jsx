@@ -1,27 +1,14 @@
-import Test from "./Test"
-import "./app.scss"
-import Navbar from "./components/navbar/Navbar";
-import Hero from "./components/hero/hero";
-import Services from "./components/services/Services";
-import About from "./components/about/About";
-import Hobbies from "./components/hobbies/Hobbies"
-import Portfolio from "./components/portfolio/Portfolio";
-import Contact from "./components/contact/Contact";
-import Cursor from "./components/cursor/Cursor";
+import { Routes, Route } from "react-router-dom"
+import Home from "./components/Home";
+import Gallery from "./components/gallery/Gallery";
 
 const App = () => {
-  return <div>
-    <Cursor/>
-    <section id="Homepage">
-      <Navbar/>
-      <Hero/>
-    </section>
-    <section id="Services"><About/></section>
-    <section><Services/></section>
-    <section id="Portfolio"><Hobbies/></section>
-    <Portfolio/>
-    <section id="Contact"><Contact/></section>
-  </div>;
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/gallery/:hobby" element={<Gallery />} />
+    </Routes>
+  );
 };
 
 export default App;

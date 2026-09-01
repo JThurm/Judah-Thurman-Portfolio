@@ -1,6 +1,7 @@
 import "./hobbies.scss"
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
+import { Link } from "react-router-dom"
 
 const variants = {
     initial: {
@@ -19,16 +20,22 @@ const variants = {
 
 const hobbies = [
     {
+        slug: "3d-modeling",
         title: "3D Modeling",
-        desc: "I like giving ideas a shape before they're real — blocking out concepts and props in 3D the same way I'd sketch out an architecture diagram before writing a line of code.",
+        tagline: "Sketching in the round",
+        desc: "There's a version of a thing in my head, and 3D modeling is how I argue with it until the shape agrees with me. Same problem-solving as engineering, minus the semicolons.",
     },
     {
+        slug: "drawing",
         title: "Drawing",
-        desc: "Character design and manga-style illustration, usually with a Star Wars-sized influence lurking somewhere in the sketchbook.",
+        tagline: "Pencil before pixel",
+        desc: "Character design and manga-style linework, usually with a Star Wars-shaped gravity well pulling the page in one direction. Every sketchbook eventually finds its way back to a lightsaber.",
     },
     {
+        slug: "woodworking",
         title: "Woodworking",
-        desc: "The most unforgiving debugger I own. No undo button, no console.log — just measure twice, cut once, and live with it.",
+        tagline: "No undo button",
+        desc: "The one hobby that doesn't forgive a bad commit. No console.log, no Ctrl+Z — just a tape measure, a plan, and the very real chance I ignore both. Measure twice, cut once, mean it.",
     },
 ];
 
@@ -49,12 +56,16 @@ const Hobbies = () => {
                 {hobbies.map((hobby) => (
                     <motion.div
                         className="box"
-                        key={hobby.title}
+                        key={hobby.slug}
                         variants={variants}
                         whileHover={{ background: "lightgray", color: "black" }}
                     >
                         <h2>{hobby.title}</h2>
+                        <span className="tagline">{hobby.tagline}</span>
                         <p>{hobby.desc}</p>
+                        <Link to={`/gallery/${hobby.slug}`} className="viewLink">
+                            View gallery →
+                        </Link>
                     </motion.div>
                 ))}
             </motion.div>

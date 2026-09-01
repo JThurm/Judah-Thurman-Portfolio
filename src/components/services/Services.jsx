@@ -35,8 +35,8 @@ const Services = () =>{
             
             <motion.div className="textContainer" variants={variants}>
                 <p>
-                    Subject to change later just 
-                    <br/> using as a placeholder</p>
+                    Interest &
+                    <br/> Passions</p> {/*change feels weird to say*/}
                 <hr/> 
             </motion.div>
             <motion.div className="titleContainer"variants={variants}>

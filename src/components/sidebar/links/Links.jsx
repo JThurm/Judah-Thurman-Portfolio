@@ -25,7 +25,6 @@ const itemVariants = {
     },
 };
 
-
 const Links = () => {
 
     const items = [
@@ -36,10 +35,22 @@ const Links = () => {
         "About",
     ]
 
+    const scrollToSection = (sectionId) => {
+        document.getElementById(sectionId)?.scrollIntoView({
+            behavior: "smooth"
+        });
+    };
+
     return(
         <motion.div className="links" variants={variants}>
             {items.map(item=>(
-                <motion.a href={`#${item}`} key={item} variants={itemVariants} whileHover ={{scale: 1.1}} whileTap={{scale:0.9}}>
+                <motion.a
+                    onClick={() => scrollToSection(item)}
+                    key={item}
+                    variants={itemVariants}
+                    whileHover={{scale: 1.1}}
+                    whileTap={{scale:0.9}}
+                >
                     {item}
                 </motion.a>
         ))}</motion.div>
