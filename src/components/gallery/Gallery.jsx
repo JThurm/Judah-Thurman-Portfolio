@@ -11,7 +11,6 @@ const galleries = {
             { type: "image", src: "blocks.png", size: "small", },
             { type: "image", src: "Landscape Wallpaper 01.png",  size: "wide", },
             { type: "image", src: "vIrUs01.png",  size: "tall", },
-            { type: "video", src: "triangle.mp4", size: "small", },
             { type: "image", src: "plexus_wallpaper01.PNG",  size: "wide", },
             { type: "image", src: "Wallpaper.png", size: "small", },
             { type: "image", src: "xbox.jpg", size: "small", },
