@@ -5,30 +5,34 @@ import {motion, useScroll, useSpring, useTransform} from "framer-motion"
 const items = [
     {
         id:1,
-        title:"place holder",
+        title:"Current Work",
           // replace img
+        link:"#",
         img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlWgGEfUAzdeNYoK0j5DeMgRwd-ipvazgGW7j-_z58vg&s=10",
         desc:"lorem ipsum dolor sit amet consectetur adipiscing elit et ut excepteur sint ipsum mollitia fugiat amet atque soluta illum praesentium ad voluptate quo officia fugiat et non nam placeat est cum libero irure eu eiusmod aliquip amet commodo omnis eu omnis mollit dolore quo consequatur do minim vel facilis corrupti",
     },
     {
         id:2,
-        title:"place holder",
+        title:"Hardware Resource Management",
           // replace img
-        img:"",
-        desc:"lorem ipsum dolor sit amet consectetur adipiscing elit et ut excepteur sint ipsum mollitia fugiat amet atque soluta illum praesentium ad voluptate quo officia fugiat et non nam placeat est cum libero irure eu eiusmod aliquip amet commodo omnis eu omnis mollit dolore quo consequatur do minim vel facilis corrupti",
+        link:"https://github.com/JThurm/momentum-swelab",
+        img:"https://www.svgrepo.com/show/504052/pc-cpu-computer-hardware-processor-chipset.svg",
+        desc:"A web application for managing hardware resources across collaborative projects. Built with React frontend, Flask backend, and MongoDB database.",
     },
     {
         id:3,
-        title:"place holder",
+        title:"Phishing URL Detection",
           // replace img
-        img:"",
-        desc:"lorem ipsum dolor sit amet consectetur adipiscing elit et ut excepteur sint ipsum mollitia fugiat amet atque soluta illum praesentium ad voluptate quo officia fugiat et non nam placeat est cum libero irure eu eiusmod aliquip amet commodo omnis eu omnis mollit dolore quo consequatur do minim vel facilis corrupti",
+        link:"https://github.com/JThurm/ECE-379k-Final-Project",
+        img:"https://cdn-icons-png.flaticon.com/512/4835/4835178.png",
+        desc:"A high-performance phishing detection system using Random Forest classification trained on lightweight URL features. Achieves 99.73% accuracy with sub-millisecond inference times, enabling real-time, privacy-preserving threat detection without accessing webpage content.",
         },
     {
         id:4,
-        title:"This Portfolio Site",
+        title:"Clang Taint Analysis",
           // TODO: swap for a screenshot of the live site
-        img:"",
+        link:"https://github.com/JThurm/Clang-Taint-Analysis---Senior-Capstone-project",
+        img:"https://cdn.prod.website-files.com/6a04589cb55ee4a08198541e/6a0467a0447885d0a35312cc_Ericsson_logo.svg.png", //Ericsson Logo
         desc:"A React + Vite portfolio built from the ground up, with a visual identity drawn straight from my color grading work — parallax scroll, animated transitions, and a dark, cinematic palette throughout.",
     },
 ];
@@ -37,22 +41,29 @@ const Single = ({item}) => {
 
     const ref = useRef();
 
-    const{scrollYProgress} = useScroll({target:ref,}); //offset:["start start","end start",]});
+    const{scrollYProgress} = useScroll({target:ref,}); ;
 
     const y = useTransform(scrollYProgress, [0,1],[-500, 500])
-
 
     return(
         <section> 
             <div className="container">
                 <div className="wrapper">
                     <div className="imageContainer" ref ={ref}>
-                        <img src={item.img} alt=""/>
+                        {item.img ? (
+                            <img src={item.img} alt={item.title}/>
+                        ) : (
+                            <div className="imagePlaceholder">Preview coming soon</div>
+                        )}
                     </div>
                     <motion.div className="textContainer" style={{y}}>
-                        <h2 >{item.title}</h2>
+                        <h2>{item.title}</h2>
                         <p>{item.desc}</p>
-                        <button>See More</button>
+                        {item.link && (
+                            <a className="button" href={item.link} target="_blank" rel="noopener noreferrer">
+                                See More
+                            </a>
+                        )}
                     </motion.div>
                 </div>
             </div>
