@@ -77,13 +77,6 @@ const Services = () =>{
                         {/* <button>GO</button> */}
                     </a>
                 </motion.div>
-                <motion.div className="box" whileHover={{background:"lightgray", color:"black"}}>
-                    <h2>Cinematography & Color Grading</h2>
-                    <p>Hands-on DaVinci Resolve work — node trees, scopes, and skin tone isolation — building a visual language that carries through to how I design software.</p>
-                    <a href="#" target="_blank" rel="noopener noreferrer"> {/*Update with link*/}
-                        {/* <button>GO</button> */}
-                    </a>
-                </motion.div>
             </motion.div>
         </motion.div>
     )
