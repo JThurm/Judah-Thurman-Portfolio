@@ -28,7 +28,7 @@ const Home = () => {
     </section>
     <section id="About"><About/></section>
     <section id="Services"><Services/></section>
-    <section id="Hobbies"><Hobbies/></section>
+    <section id="Passions"><Hobbies/></section>
     <Portfolio/>
     <section id="Contact"><Contact/></section>
   </div>;

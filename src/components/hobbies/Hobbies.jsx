@@ -24,7 +24,7 @@ const hobbies = [
         slug: "3d-modeling",
         title: "3D Modeling",
         tagline: "Sketching in the round",
-        desc: "There's a version of a thing in my head, and I use 3D modeling as a design sandbox. Allowing me to stress test ideas visually, bringing the same problems to engineering, minus the semicolons.",
+        desc: "Most ideas start as something I can already see in my head. 3D modeling gives me a sandbox to bring those ideas to life, experiment with them, and stress-test them visually before translating that same thinking into engineering. Same process, different medium—minus the semicolons.",
     },
     {
         slug: "drawing",
