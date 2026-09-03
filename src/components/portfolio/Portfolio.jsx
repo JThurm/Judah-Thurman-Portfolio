@@ -33,7 +33,7 @@ const items = [
           // TODO: swap for a screenshot of the live site
         link:"https://github.com/JThurm/Clang-Taint-Analysis---Senior-Capstone-project",
         img:"https://cdn.prod.website-files.com/6a04589cb55ee4a08198541e/6a0467a0447885d0a35312cc_Ericsson_logo.svg.png", //Ericsson Logo
-        desc:"A React + Vite portfolio built from the ground up, with a visual identity drawn straight from my color grading work — parallax scroll, animated transitions, and a dark, cinematic palette throughout.",
+        desc:"Clang's experimental taint analysis feature may inadequately detect security vulnerabilities from external inputs, risking undetected critical flaws or excessive false positives.",
     },
 ];
 
