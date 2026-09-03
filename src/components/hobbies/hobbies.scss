@@ -75,6 +75,12 @@
                 background-color 0.3s ease,
                 transform 0.3s ease;
 
+            @include mobile {
+                min-height: 200px;
+
+                padding: 24px;
+            }
+
             // Corner accents
             &::before,
             &::after {
@@ -171,20 +177,46 @@
     }
 
     @include mobile {
-        min-height: 100vh;
+    padding: 60px 20px 40px;
+    gap: 30px;
 
-        padding: 100px 20px 60px;
+    h1 {
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
 
-        gap: 35px;
+    .listContainer {
+        flex-direction: column;
+        gap: 14px;
+        width: 100%;
+        max-width: 450px;
 
-        .listContainer {
-            flex-direction: column;
+        .box {
+            padding: 20px 22px;
 
-            max-width: 500px;
+            min-height: 0;
 
-            .box {
-                min-height: auto;
+            gap: 8px;
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .tagline {
+                font-size: 12px;
+            }
+
+            p {
+                font-size: 13px;
+                line-height: 1.45;
+            }
+
+            .viewLink {
+                margin-top: 5px;
+                padding-top: 5px;
+                font-size: 13px;
             }
         }
     }
+}
 }

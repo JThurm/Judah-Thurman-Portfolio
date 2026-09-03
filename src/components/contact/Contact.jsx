@@ -72,7 +72,7 @@ const Contact = () =>{
                         delay: 3,
                         duration:1,
                     }}>
-                    <svg width="500px" height="500px" viewBox="0 0 64 64" 
+                    <svg width="100%" height="100%" viewBox="0 0 64 64" 
                         xmlns="http://www.w3.org/2000/svg" 
                         fill="none"
                         >
