@@ -24,13 +24,13 @@ const hobbies = [
         slug: "3d-modeling",
         title: "3D Modeling",
         tagline: "Sketching in the round",
-        desc: "Most ideas start as something I can already see in my head. 3D modeling gives me a sandbox to bring those ideas to life, experiment with them, and stress-test them visually before translating that same thinking into engineering. Same process, different medium—minus the semicolons.",
+        desc: "Most ideas start as something I can already see in my head. 3D modeling gives me a sandbox to bring those ideas to life, experiment with them, and stress test them visually before translating that same thinking into engineering. Same process, different mediums minus the semicolons.",
     },
     {
         slug: "drawing",
         title: "Drawing",
         tagline: "Pencil before pixel",
-        desc: "Character design and manga-style linework, usually with a Star Wars-shaped gravity well pulling the page in one direction. Every sketchbook eventually finds its way back to a lightsaber.",
+        desc: "Character design and manga-style linework, usually with a Star Wars shaped gravity well pulling the page in one direction. Every sketchbook eventually finds its way back to a lightsaber.",
     },
     // add back with more projects
     // {
