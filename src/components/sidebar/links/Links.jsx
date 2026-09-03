@@ -29,10 +29,11 @@ const Links = () => {
 
     const items = [
         "Homepage",
+        "About",
         "Services",
+        "Hobbies",
         "Portfolio",
         "Contact",
-        "About",
     ]
 
     const scrollToSection = (sectionId) => {

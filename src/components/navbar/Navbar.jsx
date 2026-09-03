@@ -15,7 +15,7 @@ const Navbar = () => {
                     animate={{opacity:1, scale: 1}}
                     transition={{duration: 0.5}}
                 >
-                    Judah Thurman
+                    {/* Judah Thurman */}
                 </motion.span>
 
                 <div className= "social">
@@ -26,13 +26,13 @@ const Navbar = () => {
                     >
                         <img src={`${import.meta.env.BASE_URL}linkedin.svg`} alt="LinkedIn" />
                     </a> 
-                    <a 
+                    {/* <a 
                         href = "https://www.instagram.com/j.n.thurm/?hl=en"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         <img src={`${import.meta.env.BASE_URL}instagram.png`} alt="Instagram" />
-                    </a>
+                    </a> */}
                     <a
                         href="https://github.com/JThurm"
                         target="_blank"
