@@ -1,104 +1,312 @@
 @import "../../app.scss";
 
-.portfolio{
+.portfolio {
     position: relative;
 
-    .progress{
-        position: sticky;
-        top:0;
-        left:0;
-        padding-top: 50px;
-        text-align: center;
-        color: orange;
-        font-size: 36px;
+    background: #0A0A0C;
+    color: #F2F5F8;
 
-        @include mobile{
+    /*
+    ========================================
+    PROGRESS
+    ========================================
+    */
+
+    .progress {
+        position: sticky;
+
+        top: 0;
+        left: 0;
+
+        padding-top: 50px;
+
+        text-align: center;
+
+        color: #FFB000;
+
+        font-size: 36px;
+        font-weight: 500;
+
+        z-index: 20;
+
+        /*
+        Keeps the progress indicator readable
+        over the project content.
+        */
+
+        pointer-events: none;
+
+        @include mobile {
             padding-top: calc(100vh - 100px);
+
             font-size: 24px;
         }
 
-        .progressBar{
-            height: 10px;
-            background-color: white;
+        .progressBar {
+            width: 100%;
+            height: 8px;
 
+            margin-top: 15px;
+
+            background-color: #3B3F4A;
+
+            transform-origin: left;
+
+            position: relative;
+
+            /*
+            The actual scaleX animation from
+            Framer Motion will control this.
+            */
+
+            &::after {
+                content: "";
+
+                position: absolute;
+
+                top: 0;
+                left: 0;
+
+                width: 100%;
+                height: 100%;
+
+                background-color: #FFB000;
+
+                transform-origin: left;
+            }
         }
     }
 
-    .container{
+    /*
+    ========================================
+    PROJECT CONTAINER
+    ========================================
+    */
+
+    .container {
         display: flex;
+
         align-items: center;
         justify-content: center;
+
         width: 100%;
         height: 100%;
+
         overflow: hidden;
 
-        .wrapper{
-            max-width: 1336px;
-            height: 100%;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            gap: 50px;
+        background: #0A0A0C;
 
-            @include mobile{
+        .wrapper {
+            max-width: 1336px;
+
+            width: 100%;
+            height: 100%;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 70px;
+
+            padding: 0 40px;
+
+            @include mobile {
                 flex-direction: column;
+
+                justify-content: center;
+
+                gap: 30px;
+
+                padding: 40px 20px;
             }
         }
 
-        .imageContainer{
-            flex: 1;
-            height: 50%;
+        /*
+        ========================================
+        IMAGE
+        ========================================
+        */
 
-            @include mobile{
+        .imageContainer {
+            flex: 1;
+
+            width: 100%;
+            height: 55%;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            @include mobile {
                 width: 100%;
+
+                height: 300px;
+
                 max-height: 300px;
             }
-            
-            img{
+
+            img {
                 width: 100%;
                 height: 100%;
+
                 object-fit: contain;
 
-                @include mobile{
+                display: block;
+
+                @include mobile {
                     object-fit: contain;
                 }
             }
         }
-        .textContainer{
-            flex:1;
+
+        /*
+        ========================================
+        TEXT
+        ========================================
+        */
+
+        .textContainer {
+            flex: 1;
+
             display: flex;
+
             flex-direction: column;
-            gap: 30px;
 
-            @include mobile{
+            gap: 25px;
+
+            @include mobile {
                 transform: none !important;
+
                 padding: 10px;
+
                 align-items: center;
-                text-align: center;;
+
+                text-align: center;
+
+                gap: 18px;
             }
 
-            h2{
+            h2 {
+                margin: 0;
+
+                color: #F2F5F8;
+
                 font-size: 72px;
-                @include mobile{
-                    fz: 36px;
-             }
-            }
 
-            p{
-                color: gray;
-                font-size: 20px;
-                @include mobile{
-                    font-size: 16px;
+                font-weight: 300;
+
+                line-height: 1;
+
+                letter-spacing: -2px;
+
+                @include mobile {
+                    font-size: 36px;
+
+                    letter-spacing: -1px;
+                }
+
+                /*
+                If you use <b> inside the project title,
+                it becomes the accent.
+                */
+
+                b {
+                    color: #FFB000;
+
+                    font-weight: 600;
                 }
             }
 
-            button{
-                background-color: orange;
-                border: none;
-                border-radius: 10px;
-                padding: 10px;
+            p {
+                margin: 0;
+
+                max-width: 600px;
+
+                color: #b8bec7;
+
+                font-size: 18px;
+
+                font-weight: 400;
+
+                line-height: 1.7;
+
+                @include mobile {
+                    font-size: 16px;
+
+                    line-height: 1.6;
+                }
+            }
+
+            /*
+            ========================================
+            PROJECT BUTTON
+            ========================================
+            */
+
+            button {
                 width: 200px;
+
+                padding: 12px 20px;
+
+                background-color: #FFB000;
+
+                border: 1px solid #FFB000;
+
+                border-radius: 4px;
+
+                color: #0A0A0C;
+
+                font-size: 15px;
+
+                font-weight: 600;
+
                 cursor: pointer;
+
+                transition:
+                    background-color 0.25s ease,
+                    color 0.25s ease,
+                    transform 0.25s ease,
+                    box-shadow 0.25s ease;
+
+                &:hover {
+                    background-color: transparent;
+
+                    color: #FFB000;
+
+                    transform: translateX(5px);
+
+                    box-shadow:
+                        0 5px 20px rgba(255, 176, 0, 0.1);
+                }
+
+                @include mobile {
+                    width: 180px;
+
+                    padding: 10px;
+
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    /*
+    ========================================
+    MOBILE
+    ========================================
+    */
+
+    @include mobile {
+        .container {
+            min-height: 100vh;
+
+            .wrapper {
+                min-height: 100vh;
             }
         }
     }

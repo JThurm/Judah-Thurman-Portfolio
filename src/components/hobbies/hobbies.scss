@@ -1,102 +1,189 @@
 @import "../../app.scss";
 
-.hobbies{
-    height: 100%;
-    background: linear-gradient(180deg, var(--navy-900), var(--black));
+.hobbies {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+
     display: flex;
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
-    gap: 50px;
-    padding: 0 20px;
 
-    h1{
-        font-size: 46px;
+    gap: 45px;
+
+    padding: 100px 8vw;
+
+    color: var(--offwhite);
+
+    // IMPORTANT:
+    // Let VideoBG handle the background.
+    background: transparent;
+
+    h1 {
+        font-size: clamp(42px, 5vw, 64px);
         font-weight: 600;
         color: var(--offwhite);
+
         text-align: center;
 
-        @include mobile{
-            font-size: 30px;
+        margin: 0;
+
+        letter-spacing: -1.5px;
+
+        @include mobile {
+            font-size: 32px;
         }
     }
 
-    .listContainer{
+    .listContainer {
         display: flex;
+
         gap: 24px;
-        max-width: 1200px;
+
         width: 100%;
+        max-width: 1100px;
 
-        @include mobile{
-            flex-direction: column;
-        }
+        justify-content: center;
+        align-items: stretch;
 
-        .box{
+        .box {
             position: relative;
+
             flex: 1;
-            padding: 36px;
+
+            min-height: 230px;
+
+            padding: 32px;
+
             border: 1px solid var(--slate-700);
+
+            background: rgba(10, 15, 30, 0.35);
+
+            backdrop-filter: blur(4px);
+
             display: flex;
             flex-direction: column;
-            gap: 14px;
-            cursor: default;
-            transition: border-color 0.3s ease, background-color 0.3s ease;
 
-            &::before, &::after{
+            gap: 14px;
+
+            cursor: default;
+
+            transition:
+                border-color 0.3s ease,
+                background-color 0.3s ease,
+                transform 0.3s ease;
+
+            // Corner accents
+            &::before,
+            &::after {
                 content: "";
+
                 position: absolute;
+
                 width: 14px;
                 height: 14px;
+
                 border: 0 solid var(--accent-bright);
+
                 opacity: 0;
+
                 transition: opacity 0.3s ease;
             }
-            &::before{
+
+            &::before {
                 top: -1px;
                 left: -1px;
+
                 border-width: 2px 0 0 2px;
             }
-            &::after{
+
+            &::after {
                 bottom: -1px;
                 right: -1px;
+
                 border-width: 0 2px 2px 0;
             }
-            &:hover::before, &:hover::after{
+
+            &:hover {
+                border-color: var(--slate-500);
+
+                background: rgba(20, 28, 48, 0.55);
+
+                transform: translateY(-4px);
+            }
+
+            &:hover::before,
+            &:hover::after {
                 opacity: 1;
             }
 
-            h2{
+            h2 {
+                margin: 0;
+
                 font-size: 22px;
                 font-weight: 600;
+
                 color: var(--accent-bright);
             }
 
-            .tagline{
+            .tagline {
                 font-size: 13px;
                 font-weight: 400;
+
                 font-style: italic;
+
                 color: var(--slate-300);
+
                 letter-spacing: 0.3px;
             }
 
-            p{
+            p {
+                margin: 0;
+
                 font-size: 15px;
                 font-weight: 300;
+
                 color: var(--slate-300);
-                line-height: 1.5;
+
+                line-height: 1.6;
             }
 
-            .viewLink{
+            .viewLink {
                 margin-top: auto;
-                padding-top: 10px;
+                padding-top: 16px;
+
                 font-size: 14px;
                 font-weight: 500;
+
                 color: var(--offwhite);
+
+                text-decoration: none;
+
                 transition: color 0.25s ease;
 
-                &:hover{
+                &:hover {
                     color: var(--accent-bright);
                 }
+            }
+        }
+    }
+
+    @include mobile {
+        min-height: 100vh;
+
+        padding: 100px 20px 60px;
+
+        gap: 35px;
+
+        .listContainer {
+            flex-direction: column;
+
+            max-width: 500px;
+
+            .box {
+                min-height: auto;
             }
         }
     }

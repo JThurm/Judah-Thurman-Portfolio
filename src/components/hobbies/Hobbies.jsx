@@ -2,6 +2,7 @@ import "./hobbies.scss"
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { Link } from "react-router-dom"
+import VideoBG from "../videoBg/VideoBg";
 
 const variants = {
     initial: {
@@ -23,7 +24,7 @@ const hobbies = [
         slug: "3d-modeling",
         title: "3D Modeling",
         tagline: "Sketching in the round",
-        desc: "There's a version of a thing in my head, and 3D modeling is how I argue with it until the shape agrees with me. Same problem-solving as engineering, minus the semicolons.",
+        desc: "There's a version of a thing in my head, and I use 3D modeling as a design sandbox. Allowing me to stress test ideas visually, bringing the same problems to engineering, minus the semicolons.",
     },
     {
         slug: "drawing",
@@ -31,12 +32,13 @@ const hobbies = [
         tagline: "Pencil before pixel",
         desc: "Character design and manga-style linework, usually with a Star Wars-shaped gravity well pulling the page in one direction. Every sketchbook eventually finds its way back to a lightsaber.",
     },
-    {
-        slug: "woodworking",
-        title: "Woodworking",
-        tagline: "No undo button",
-        desc: "The one hobby that doesn't forgive a bad commit. No console.log, no Ctrl+Z — just a tape measure, a plan, and the very real chance I ignore both. Measure twice, cut once, mean it.",
-    },
+    // add back with more projects
+    // {
+    //     slug: "woodworking",
+    //     title: "Woodworking",
+    //     tagline: "No undo button",
+    //     desc: "The one hobby that doesn't forgive a bad commit. No console.log, no Ctrl+Z — just a tape measure, a plan, and the very real chance I ignore both. Measure twice, cut once, mean it.",
+    // },
 ];
 
 const Hobbies = () => {
@@ -44,7 +46,8 @@ const Hobbies = () => {
     const isInView = useInView(ref, { margin: "-100px" });
 
     return (
-        <motion.div
+        <VideoBG src="helix.MP4">
+            <motion.div
             className="hobbies"
             ref={ref}
             variants={variants}
@@ -70,6 +73,7 @@ const Hobbies = () => {
                 ))}
             </motion.div>
         </motion.div>
+        </VideoBG>
     );
 };
 

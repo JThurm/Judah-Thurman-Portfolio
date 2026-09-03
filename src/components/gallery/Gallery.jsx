@@ -1,6 +1,7 @@
 import "./gallery.scss";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import VideoBG from "../videoBg/VideoBg";
 
 const galleries = {
     "3d-modeling": {
@@ -11,18 +12,41 @@ const galleries = {
             { type: "image", src: "blocks.png", size: "small", },
             { type: "image", src: "Landscape Wallpaper 01.png",  size: "wide", },
             { type: "image", src: "vIrUs01.png",  size: "tall", },
+            { type: "video", src: "Aliens.mp4", size: "large", },
+            { type: "image", src: "Abstract_cube_02.PNG", size: "tall", },
             { type: "image", src: "plexus_wallpaper01.PNG",  size: "wide", },
             { type: "image", src: "Wallpaper.png", size: "small", },
-            { type: "image", src: "xbox.jpg", size: "small", },
-            { type: "video", src: "Xbox_Animation.mov", size: "large", },
+            { type: "image", src: "xbox.jpg", size: "extraTall", },
+            { type: "image", src: "untitled_07.png", size: "extraTall", },
+            { type: "image", src: "godzilla.PNG", size: "large", },
+            { type: "video", src: "helix.MP4", size: "large", },
+            { type: "image", src: "Side_Temple_View.PNG", size: "small", },
+            
+            
+            
+            // { type: "video", src: "Xbox_Animation.mov", size: "large", },
+            
         ],
     },
 
     "drawing": {
         title: "Drawing",
         media: [
+            { type: "image", src: "ironman.jpeg", size: "extraTall", },
             { type: "image", src: "batman.jpg", size: "large", },
-            { type: "image", src: "ironman.jpeg", size: "large", },
+            { type: "image", src: "subzero.jpg", size: "large", },
+            { type: "image", src: "ahsoka.jpg", size: "extraLarge", },
+            { type: "image", src: "Mando.JPG", size: "large", },
+            { type: "image", src: "ahsoka01.JPG", size: "extraLarge", },
+            { type: "image", src: "marvel.jpg", size: "large", },
+            { type: "image", src: "goku.jpg", size: "extraTall", },
+            { type: "image", src: "commander.jpeg", size: "extraTall", },
+            { type: "image", src: "gundam.jpg", size: "extraTall", },
+            { type: "image", src: "vader.jpg", size: "large", },
+            { type: "image", src: "invicible01.JPG", size: "tall", },
+            { type: "image", src: "invincible.JPG", size: "tall", },
+            
+            // { type: "image", src: "Thanos.JPG", size: "extraTall", },
         ],
     },
 
@@ -76,7 +100,8 @@ const Gallery = () => {
     }
 
     return (
-        <div className="gallery">
+        <VideoBG src="helix.MP4">
+            <div className="gallery">
 
             <Link
                 to="/"
@@ -115,13 +140,17 @@ const Gallery = () => {
                                 />
                             ) : (
                                 <video
+                                    autoPlay
                                     controls
+                                    loop
+                                    muted
+                                    playsInline
                                     preload="metadata"
                                 >
                                     <source
                                         src={`${import.meta.env.BASE_URL}${media.src}`}
                                         type={
-                                            media.src.endsWith(".mov")
+                                            media.src.toLowerCase().endsWith(".mov")
                                                 ? "video/quicktime"
                                                 : "video/mp4"
                                         }
@@ -135,6 +164,7 @@ const Gallery = () => {
                 </motion.div>
             )}
         </div>
+        </VideoBG>
     );
 };
 export default Gallery;
