@@ -3,8 +3,98 @@
 .portfolio {
     position: relative;
 
-    background: #0A0A0C;
     color: #F2F5F8;
+
+    /*
+    ========================================
+    MAIN BACKGROUND
+    ========================================
+    */
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 176, 0, 0.055) 0%,
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(59, 63, 74, 0.20) 0%,
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #0A0A0C 0%,
+            #101116 45%,
+            #1E1F25 100%
+        );
+
+    /*
+    Technical grid overlay
+    */
+
+    &::before {
+        content: "";
+
+        position: fixed;
+
+        inset: 0;
+
+        pointer-events: none;
+
+        z-index: 0;
+
+        opacity: 0.18;
+
+        background-image:
+            linear-gradient(
+                rgba(59, 63, 74, 0.35) 1px,
+                transparent 1px
+            ),
+            linear-gradient(
+                90deg,
+                rgba(59, 63, 74, 0.35) 1px,
+                transparent 1px
+            );
+
+        background-size: 70px 70px;
+
+        mask-image: linear-gradient(
+            to bottom,
+            transparent,
+            black 15%,
+            black 85%,
+            transparent
+        );
+    }
+
+    /*
+    Subtle central glow
+    */
+
+    &::after {
+        content: "";
+
+        position: fixed;
+
+        top: 50%;
+        left: 50%;
+
+        width: 700px;
+        height: 700px;
+
+        transform: translate(-50%, -50%);
+
+        background: radial-gradient(
+            circle,
+            rgba(255, 176, 0, 0.035),
+            transparent 65%
+        );
+
+        pointer-events: none;
+
+        z-index: 0;
+    }
 
     /*
     ========================================
@@ -29,11 +119,6 @@
 
         z-index: 20;
 
-        /*
-        Keeps the progress indicator readable
-        over the project content.
-        */
-
         pointer-events: none;
 
         @include mobile {
@@ -44,6 +129,7 @@
 
         .progressBar {
             width: 100%;
+
             height: 8px;
 
             margin-top: 15px;
@@ -54,9 +140,10 @@
 
             position: relative;
 
+            overflow: hidden;
+
             /*
-            The actual scaleX animation from
-            Framer Motion will control this.
+            Amber progress indicator
             */
 
             &::after {
@@ -64,15 +151,19 @@
 
                 position: absolute;
 
-                top: 0;
-                left: 0;
+                inset: 0;
 
-                width: 100%;
-                height: 100%;
-
-                background-color: #FFB000;
+                background:
+                    linear-gradient(
+                        90deg,
+                        #FFB000,
+                        #ffd166
+                    );
 
                 transform-origin: left;
+
+                box-shadow:
+                    0 0 15px rgba(255, 176, 0, 0.35);
             }
         }
     }
@@ -84,6 +175,10 @@
     */
 
     .container {
+        position: relative;
+
+        z-index: 2;
+
         display: flex;
 
         align-items: center;
@@ -94,7 +189,25 @@
 
         overflow: hidden;
 
-        background: #0A0A0C;
+        /*
+        Transparent so the main background
+        remains visible.
+        */
+
+        background: transparent;
+
+        /*
+        Very subtle alternating depth
+        */
+
+        &:nth-child(odd) {
+            background:
+                radial-gradient(
+                    circle at 80% 50%,
+                    rgba(59, 63, 74, 0.08),
+                    transparent 45%
+                );
+        }
 
         .wrapper {
             max-width: 1336px;
@@ -142,12 +255,84 @@
             align-items: center;
             justify-content: center;
 
+            /*
+            Subtle background panel
+            */
+
+            padding: 25px;
+
+            box-sizing: border-box;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(30, 31, 37, 0.55),
+                    rgba(10, 10, 12, 0.65)
+                );
+
+            border: 1px solid #3B3F4A;
+
             @include mobile {
                 width: 100%;
 
                 height: 300px;
 
                 max-height: 300px;
+
+                padding: 15px;
+            }
+
+            /*
+            Amber corner marker
+            */
+
+            &::before {
+                content: "";
+
+                position: absolute;
+
+                top: -1px;
+                left: -1px;
+
+                width: 45px;
+                height: 45px;
+
+                border-top: 2px solid #FFB000;
+                border-left: 2px solid #FFB000;
+
+                pointer-events: none;
+
+                transition:
+                    width 0.3s ease,
+                    height 0.3s ease;
+            }
+
+            /*
+            Bottom-right slate corner
+            */
+
+            &::after {
+                content: "";
+
+                position: absolute;
+
+                bottom: -1px;
+                right: -1px;
+
+                width: 45px;
+                height: 45px;
+
+                border-bottom: 1px solid #3B3F4A;
+                border-right: 1px solid #3B3F4A;
+
+                pointer-events: none;
+            }
+
+            &:hover {
+                &::before {
+                    width: 65px;
+                    height: 65px;
+                }
             }
 
             img {
@@ -179,6 +364,8 @@
 
             gap: 25px;
 
+            position: relative;
+
             @include mobile {
                 transform: none !important;
 
@@ -189,6 +376,22 @@
                 text-align: center;
 
                 gap: 18px;
+            }
+
+            /*
+            Small project indicator
+            */
+
+            &::before {
+                content: "PROJECT";
+
+                color: #FFB000;
+
+                font-size: 12px;
+
+                font-weight: 600;
+
+                letter-spacing: 3px;
             }
 
             h2 {
@@ -210,11 +413,6 @@
                     letter-spacing: -1px;
                 }
 
-                /*
-                If you use <b> inside the project title,
-                it becomes the accent.
-                */
-
                 b {
                     color: #FFB000;
 
@@ -227,7 +425,7 @@
 
                 max-width: 600px;
 
-                color: #b8bec7;
+                color: #B8BEC7;
 
                 font-size: 18px;
 
@@ -281,7 +479,7 @@
                     transform: translateX(5px);
 
                     box-shadow:
-                        0 5px 20px rgba(255, 176, 0, 0.1);
+                        0 5px 25px rgba(255, 176, 0, 0.12);
                 }
 
                 @include mobile {
@@ -308,6 +506,17 @@
             .wrapper {
                 min-height: 100vh;
             }
+        }
+
+        &::before {
+            background-size: 45px 45px;
+
+            opacity: 0.12;
+        }
+
+        &::after {
+            width: 400px;
+            height: 400px;
         }
     }
 }

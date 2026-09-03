@@ -38,8 +38,8 @@ const About = () => {
                     I grew up taking things apart to see how they worked, and
                     somewhere along the way I never really stopped. A degree
                     in Electrical & Computer Engineering from The University
-                    of Texas at Austin gave that habit a vocabulary — circuits,
-                    systems, security, machine learning — and now I'm chasing
+                    of Texas at Austin gave that habit a vocabulary: circuits,
+                    systems, security, machine learning. Now I'm chasing
                     the same instinct into software, back home in Manvel, TX.
                 </motion.p>
                 <motion.p variants={variants}>
@@ -54,8 +54,9 @@ const About = () => {
                     and make it precise.
                 </motion.p>
                 <motion.p variants={variants}>
-                    I'm not chasing a title so much as a problem worth being
-                    stubborn about. If that's you too, let's talk.
+                    I want a role that matches my skills, but what actually pulls
+                    me in is a problem worth being stubborn about. If that
+                    sounds like your kind of work, let's talk.
                 </motion.p>
             </motion.div>
         </motion.div>

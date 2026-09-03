@@ -46,7 +46,7 @@ const Hobbies = () => {
     const isInView = useInView(ref, { margin: "-100px" });
 
     return (
-        <VideoBG src="helix.MP4">
+        <VideoBG src="background.mp4">
             <motion.div
             className="hobbies"
             ref={ref}

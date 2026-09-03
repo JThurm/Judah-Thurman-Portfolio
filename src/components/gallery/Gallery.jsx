@@ -1,6 +1,7 @@
 import "./gallery.scss";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import VideoBG from "../videoBg/VideoBg";
 
 const galleries = {
@@ -77,6 +78,11 @@ const item = {
 
 const Gallery = () => {
     const { hobby } = useParams();
+
+     useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+    
     const data = galleries[hobby];
 
     if (!data) {
@@ -100,7 +106,7 @@ const Gallery = () => {
     }
 
     return (
-        <VideoBG src="helix.MP4">
+        <VideoBG src="background.mp4">
             <div className="gallery">
 
             <Link

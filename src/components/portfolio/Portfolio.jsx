@@ -7,9 +7,9 @@ const items = [
         id:1,
         title:"Current Work",
           // replace img
-        link:"#",
-        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlWgGEfUAzdeNYoK0j5DeMgRwd-ipvazgGW7j-_z58vg&s=10",
-        desc:"lorem ipsum dolor sit amet consectetur adipiscing elit et ut excepteur sint ipsum mollitia fugiat amet atque soluta illum praesentium ad voluptate quo officia fugiat et non nam placeat est cum libero irure eu eiusmod aliquip amet commodo omnis eu omnis mollit dolore quo consequatur do minim vel facilis corrupti",
+        link:"https://github.com/JThurm/Moving-Ratings-in-SQL/tree/main",
+        img:"https://www.svgrepo.com/show/426429/stack.svg",
+        desc:"Analysis of a movie ratings dataset (MovieLens-style schema) to uncover trends in audience preferences over time — how average ratings shift by release year, which genres rise and fall in popularity, and where audience opinion is most divided.",
     },
     {
         id:2,
