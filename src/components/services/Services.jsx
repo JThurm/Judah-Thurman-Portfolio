@@ -35,13 +35,13 @@ const Services = () =>{
             
             <motion.div className="textContainer" variants={variants}>
                 <p>
-                    Interest &
-                    <br/> Passions</p> {/*change feels weird to say*/}
+                    The technical and the creative
+                    <br/> skills and interests, all in one place.</p> 
                 <hr/> 
             </motion.div>
             <motion.div className="titleContainer"variants={variants}>
                 <div className="title">
-                    <img src={`${import.meta.env.BASE_URL}people.webp`} alt=""/> {/* TODO: swap for a real headshot */}
+                    <img src={`${import.meta.env.BASE_URL}terminal.jpg`} alt=""/> 
                         <h1>
                             <motion.b whileHover={{color:"orange"}}>Software</motion.b> Engineer
                         </h1>
