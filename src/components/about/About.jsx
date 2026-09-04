@@ -35,28 +35,27 @@ const About = () => {
                     Judah <b>Thurman</b>
                 </motion.h1>
                 <motion.p variants={variants}>
-                    I grew up taking things apart to see how they worked, and
-                    somewhere along the way I never really stopped. A degree
-                    in Electrical & Computer Engineering from The University
-                    of Texas at Austin gave that habit a vocabulary: circuits,
-                    systems, security, machine learning. Now I'm chasing
-                    the same instinct into software, back home in Manvel, TX.
+                    I am an Electrical and Computer Engineering graduate from The University of 
+                    Texas at Austin, specializing in software engineering and design. I am passionate
+                    about building reliable, user-focused software and solving complex problems through
+                    technology. My experience spans full-stack development, systems programming, embedded 
+                    systems, and machine learning, with hands-on experience in C/C++, Python, Java, 
+                    JavaScript, React, and a variety of modern development tools.
                 </motion.p>
                 <motion.p variants={variants}>
-                    Code, to me, is just another kind of frame — every
-                    function has to hold its shape under pressure, same as
-                    every shot I color grade has to hold its exposure across
-                    a scene. I write in Java, Python, C/C++, and JavaScript,
-                    ship the way Agile teams do — plan, build, learn, repeat —
-                    and bake security in from the first commit instead of
-                    bolting it on at the end. Whether I'm staring at a scope
-                    or a stack trace, the job is the same: find what's off,
-                    and make it precise.
+                    I enjoy understanding how technology works beneath the surface; from the underlying 
+                    systems and algorithms to the interfaces and experiences users interact with. This 
+                    perspective allows me to approach engineering problems from both a technical and
+                    user-centered standpoint, with an emphasis on creating solutions that are efficient, 
+                    maintainable, and thoughtfully designed.
                 </motion.p>
                 <motion.p variants={variants}>
-                    I want a role that matches my skills, but what actually pulls
-                    me in is a problem worth being stubborn about. If that
-                    sounds like your kind of work, let's talk.
+                    As I continue developing as an engineer, I am interested in opportunities that 
+                    challenge me to learn, collaborate, and apply my skills to meaningful problems. 
+                    Whether developing software, exploring intelligent systems, or working closer to 
+                    the hardware, I am motivated by the opportunity to turn complex ideas into 
+                    practical solutions and continuously improve the way technology is built and 
+                    experienced.
                 </motion.p>
             </motion.div>
         </motion.div>

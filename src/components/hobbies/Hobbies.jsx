@@ -24,13 +24,13 @@ const hobbies = [
         slug: "3d-modeling",
         title: "3D Modeling",
         tagline: "Sketching in the round",
-        desc: "Most ideas start as something I can already see in my head. 3D modeling gives me a sandbox to bring those ideas to life, experiment with them, and stress test them visually before translating that same thinking into engineering. Same process, different mediums minus the semicolons.",
+        desc: "I use Blender to develop 3D models, environments, and visual concepts, combining creativity with an engineering-oriented approach to design, iteration, and problem solving.",
     },
     {
         slug: "drawing",
         title: "Drawing",
         tagline: "Pencil before pixel",
-        desc: "Character design and manga-style linework, usually with a Star Wars shaped gravity well pulling the page in one direction. Every sketchbook eventually finds its way back to a lightsaber.",
+        desc: "I specialize in traditional and digital illustration using mediums like Procreate to craft character designs and visual stories focused on strong linework and dynamic composition.",
     },
     // add back with more projects
     // {

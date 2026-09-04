@@ -25,7 +25,7 @@ const itemVariants = {
     },
 };
 
-const Links = () => {
+const Links = ({ setOpen }) => {
 
     const items = [
         "Homepage",
@@ -46,7 +46,7 @@ const Links = () => {
         <motion.div className="links" variants={variants}>
             {items.map(item=>(
                 <motion.a
-                    onClick={() => scrollToSection(item)}
+                    onClick={() => {scrollToSection(item); setOpen(false); }}
                     key={item}
                     variants={itemVariants}
                     whileHover={{scale: 1.1}}
