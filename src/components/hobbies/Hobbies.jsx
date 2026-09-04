@@ -61,7 +61,6 @@ const Hobbies = () => {
                         className="box"
                         key={hobby.slug}
                         variants={variants}
-                        whileHover={{ background: "lightgray", color: "black" }}
                     >
                         <h2>{hobby.title}</h2>
                         <span className="tagline">{hobby.tagline}</span>

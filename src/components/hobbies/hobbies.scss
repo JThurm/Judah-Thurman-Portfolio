@@ -17,8 +17,7 @@
 
     color: var(--offwhite);
 
-    // IMPORTANT:
-    // Let VideoBG handle the background.
+    // Let VideoBG handle the background
     background: transparent;
 
     h1 {
@@ -33,7 +32,8 @@
         letter-spacing: -1.5px;
 
         @include mobile {
-            font-size: 32px;
+            font-size: 30px;
+            margin-bottom: 5px;
         }
     }
 
@@ -53,15 +53,11 @@
 
             flex: 1;
 
-            min-height: 230px;
+            padding: 36px;
 
-            padding: 32px;
+            background: rgba(30, 31, 37, 0.45);
 
-            border: 1px solid var(--slate-700);
-
-            background: rgba(30, 31, 37, 0.25);
-
-            backdrop-filter: blur(4px);
+            border: 1px solid #3B3F4A;
 
             display: flex;
             flex-direction: column;
@@ -71,152 +67,107 @@
             cursor: default;
 
             transition:
-                border-color 0.3s ease,
                 background-color 0.3s ease,
+                border-color 0.3s ease,
                 transform 0.3s ease;
 
-            @include mobile {
-                min-height: 200px;
-
-                padding: 24px;
-            }
-
-            // Corner accents
-            &::before,
-            &::after {
-                content: "";
-
-                position: absolute;
-
-                width: 14px;
-                height: 14px;
-
-                border: 0 solid var(--accent-bright);
-
-                opacity: 0;
-
-                transition: opacity 0.3s ease;
-            }
-
-            &::before {
-                top: -1px;
-                left: -1px;
-
-                border-width: 2px 0 0 2px;
-            }
-
-            &::after {
-                bottom: -1px;
-                right: -1px;
-
-                border-width: 0 2px 2px 0;
-            }
-
             &:hover {
-                border-color: var(--slate-500);
-
-                background: rgba(20, 28, 48, 0.55);
-
+                background-color: rgba(30, 31, 37, 0.9);
+                border-color: #FFB000;
                 transform: translateY(-4px);
             }
 
-            &:hover::before,
-            &:hover::after {
-                opacity: 1;
-            }
-
             h2 {
-                margin: 0;
-
+                color: #FFB000;
                 font-size: 22px;
                 font-weight: 600;
-
-                color: var(--accent-bright);
+                margin: 0;
             }
 
             .tagline {
+                color: #F2F5F8;
                 font-size: 13px;
                 font-weight: 400;
-
                 font-style: italic;
-
-                color: var(--slate-300);
-
-                letter-spacing: 0.3px;
             }
 
             p {
-                margin: 0;
-
+                color: #b8bec7;
                 font-size: 15px;
                 font-weight: 300;
-
-                color: var(--slate-300);
-
-                line-height: 1.6;
+                line-height: 1.5;
+                margin: 0;
             }
 
             .viewLink {
                 margin-top: auto;
-                padding-top: 16px;
+                padding-top: 10px;
+
+                color: #F2F5F8;
 
                 font-size: 14px;
                 font-weight: 500;
 
-                color: var(--offwhite);
-
-                text-decoration: none;
-
                 transition: color 0.25s ease;
 
                 &:hover {
-                    color: var(--accent-bright);
+                    color: #FFB000;
                 }
             }
         }
     }
 
+    /*
+    ========================================
+    MOBILE
+    ========================================
+    */
+
     @include mobile {
-    padding: 60px 20px 40px;
-    gap: 30px;
+        padding: 60px 20px 40px;
+        gap: 30px;
 
-    h1 {
-        font-size: 30px;
-        margin-bottom: 5px;
-    }
+        h1 {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
 
-    .listContainer {
-        flex-direction: column;
-        gap: 14px;
-        width: 100%;
-        max-width: 450px;
+        .listContainer {
+            flex-direction: column;
 
-        .box {
-            padding: 20px 22px;
+            gap: 14px;
 
-            min-height: 0;
+            width: 100%;
+            max-width: 450px;
 
-            gap: 8px;
+            .box {
+                flex: none;
 
-            h2 {
-                font-size: 20px;
-            }
+                padding: 20px 22px;
 
-            .tagline {
-                font-size: 12px;
-            }
+                min-height: 0;
 
-            p {
-                font-size: 13px;
-                line-height: 1.45;
-            }
+                gap: 8px;
 
-            .viewLink {
-                margin-top: 5px;
-                padding-top: 5px;
-                font-size: 13px;
+                h2 {
+                    font-size: 20px;
+                }
+
+                .tagline {
+                    font-size: 12px;
+                }
+
+                p {
+                    font-size: 13px;
+                    line-height: 1.45;
+                }
+
+                .viewLink {
+                    margin-top: 5px;
+                    padding-top: 5px;
+                    font-size: 13px;
+                }
             }
         }
     }
-}
 }
