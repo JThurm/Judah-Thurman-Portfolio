@@ -22,8 +22,11 @@ const galleries = {
             { type: "image", src: "godzilla.PNG", size: "large", },
             { type: "video", src: "helix.MP4", size: "large", },
             { type: "image", src: "Side_Temple_View.PNG", size: "small", },
-            
-            
+            { type: "image", src: "system_03.png", size: "extraLarge", }, 
+            { type: "image", src: "system_00.png", size: "wide", },
+            { type: "image", src: "system_01.png", size: "large", },
+            { type: "image", src: "system_02.png", size: "wide", },    
+                       
             
             // { type: "video", src: "Xbox_Animation.mov", size: "large", },
             
@@ -46,6 +49,10 @@ const galleries = {
             { type: "image", src: "vader.jpg", size: "large", },
             { type: "image", src: "invicible01.JPG", size: "tall", },
             { type: "image", src: "invincible.JPG", size: "tall", },
+            { type: "image", src: "dogfight.jpg", size: "wide", },
+            { type: "image", src: "cyclops.jpg", size: "extraLarge", },
+            { type: "image", src: "ahsoka_02.jpg", size: "large", },
+            { type: "image", src: "ahsoka_01.jpg", size: "wide", },
             
             // { type: "image", src: "Thanos.JPG", size: "extraTall", },
         ],

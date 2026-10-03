@@ -6,15 +6,16 @@ const items = [
     {
         id:1,
         title:"Current Work",
-          // replace img
-        link:"https://github.com/JThurm/Moving-Ratings-in-SQL/tree/main",
+        // replace img
+        link:"https://github.com/JThurm/-Music-Player",
         img:"https://www.svgrepo.com/show/426429/stack.svg",
-        desc:"Analysis of a movie ratings dataset (MovieLens-style schema) to uncover trends in audience preferences over time — how average ratings shift by release year, which genres rise and fall in popularity, and where audience opinion is most divided.",
+        desc:"Pulse is a C++ music player built with Dear ImGui and OpenGL, featuring an interactive library, album and song navigation, and playback controls. The project focuses on building a responsive desktop UI while applying object-oriented C++ and audio playback concepts.",
+
     },
     {
         id:2,
         title:"Hardware Resource Management",
-          // replace img
+        // replace img
         link:"https://github.com/JThurm/momentum-swelab",
         img:"https://www.svgrepo.com/show/504052/pc-cpu-computer-hardware-processor-chipset.svg",
         desc:"A web application for managing hardware resources across collaborative projects. Built with React frontend, Flask backend, and MongoDB database.",
@@ -31,16 +32,24 @@ const items = [
         id:4,
         title:"Clang Taint Analysis",
           // TODO: swap for a screenshot of the live site
-        link:"https://github.com/JThurm/Clang-Taint-Analysis---Senior-Capstone-project",
-        img:"https://cdn.prod.website-files.com/6a04589cb55ee4a08198541e/6a0467a0447885d0a35312cc_Ericsson_logo.svg.png", //Ericsson Logo
-        desc:"Clang's experimental taint analysis feature may inadequately detect security vulnerabilities from external inputs, risking undetected critical flaws or excessive false positives.",
-    },
-];
-
-const Single = ({item}) => {
-
-    const ref = useRef();
-
+          link:"https://github.com/JThurm/Clang-Taint-Analysis---Senior-Capstone-project",
+          img:"https://cdn.prod.website-files.com/6a04589cb55ee4a08198541e/6a0467a0447885d0a35312cc_Ericsson_logo.svg.png", //Ericsson Logo
+          desc:"Clang's experimental taint analysis feature may inadequately detect security vulnerabilities from external inputs, risking undetected critical flaws or excessive false positives.",
+        },
+        {
+            id:5,
+            title:"Moving Ratings in SQL",
+              // replace img
+            link:"https://github.com/JThurm/Moving-Ratings-in-SQL/tree/main",
+            img:"https://www.svgrepo.com/show/299266/database-server.svg", 
+            desc:"Analysis of a movie ratings dataset (MovieLens-style schema) to uncover trends in audience preferences over time — how average ratings shift by release year, which genres rise and fall in popularity, and where audience opinion is most divided.",
+        },
+    ];
+    
+    const Single = ({item}) => {
+        
+        const ref = useRef();
+        
     const{scrollYProgress} = useScroll({target:ref,}); ;
 
     const y = useTransform(scrollYProgress, [0,1],[-500, 500])
